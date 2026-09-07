@@ -1,0 +1,30 @@
+# Copy to terraform.tfvars and fill in all values before deploying.
+# terraform.tfvars is gitignored — never commit it.
+
+# ── Required ──────────────────────────────────────────────────────────────────
+
+# Your current public IP with /32 mask — auto-detect: curl -s https://checkip.amazonaws.com
+admin_ip = "YOUR_PUBLIC_IP/32"
+
+# Splunk admin password (min 8 chars, mixed case + digit required by Splunk)
+splunk_password = "ChangeMe!Lab1"
+
+# AMI IDs — region-specific, must match aws_region below
+# Kali: search AWS Marketplace for "Kali Linux"
+ami_kali = ""
+# Windows: EC2 console > AMIs > search "Windows_Server-2022-English-Full-Base"
+ami_windows = ""
+# Ubuntu 22.04: run the aws CLI command in variables.tf description to get current ID
+ami_ubuntu = ""
+
+# ── Optional overrides ─────────────────────────────────────────────────────────
+
+# aws_region    = "us-east-2"
+# key_name      = "redblue-lab-keypair"
+
+# Splunk version — update both fields together (build hash is in the download URL)
+# splunk_version = "9.1.2"
+# splunk_build   = "b6b9c8185839"
+
+# Nessus .deb URL — get current link from https://www.tenable.com/downloads/nessus
+# nessus_deb_url = "https://www.tenable.com/downloads/api/v1/public/pages/nessus/downloads/24057/Nessus-10.6.3-debian10_amd64.deb"
